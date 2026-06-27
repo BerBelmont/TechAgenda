@@ -1,5 +1,7 @@
 @import "tailwindcss";
 
+@custom-variant dark (&:where(.dark, .dark *));
+
 @theme {
   --color-brand-50: #eff8ff;
   --color-brand-100: #dbefff;
@@ -20,10 +22,33 @@
     sans-serif;
 }
 
+:root.dark {
+  color-scheme: dark;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
 body {
   margin: 0;
   min-width: 320px;
   background: #f8fafc;
+  line-height: 1.5;
+}
+
+#root {
+  min-height: 100vh;
+}
+
+.dark body {
+  background: #020617;
 }
 
 button,
@@ -40,4 +65,144 @@ select:focus-visible,
 textarea:focus-visible {
   outline: 3px solid #7cc7ff;
   outline-offset: 2px;
+}
+
+.dark .bg-white,
+.dark .bg-slate-50,
+.dark .hover\:bg-white:hover {
+  background-color: #0f172a;
+}
+
+.dark .bg-white\/95 {
+  background-color: rgba(15, 23, 42, 0.95);
+}
+
+.dark .bg-slate-100,
+.dark .hover\:bg-slate-100:hover {
+  background-color: #1e293b;
+}
+
+.dark .bg-brand-50,
+.dark .hover\:bg-brand-50:hover {
+  background-color: rgba(14, 116, 144, 0.18);
+}
+
+.dark .bg-brand-800 {
+  background-color: #0e7490;
+}
+
+.dark .hover\:bg-brand-900:hover {
+  background-color: #155e75;
+}
+
+.dark .bg-brand-900 {
+  background-color: #164e63;
+}
+
+.dark .bg-blue-50,
+.dark .bg-sky-50,
+.dark .bg-indigo-50 {
+  background-color: rgba(30, 64, 175, 0.22);
+}
+
+.dark .bg-amber-50 {
+  background-color: rgba(146, 64, 14, 0.24);
+}
+
+.dark .bg-emerald-50 {
+  background-color: rgba(6, 95, 70, 0.24);
+}
+
+.dark .bg-red-50 {
+  background-color: rgba(127, 29, 29, 0.24);
+}
+
+.dark .border-slate-100,
+.dark .border-slate-200,
+.dark .border-slate-300,
+.dark .border-brand-200,
+.dark .border-blue-200,
+.dark .border-amber-200,
+.dark .border-emerald-200,
+.dark .border-red-200,
+.dark .hover\:border-brand-200:hover,
+.dark .hover\:border-brand-300:hover {
+  border-color: #334155;
+}
+
+.dark .divide-slate-100 > :not([hidden]) ~ :not([hidden]) {
+  border-color: #334155;
+}
+
+.dark .text-slate-900,
+.dark .text-slate-800,
+.dark .text-brand-900,
+.dark .hover\:text-brand-900:hover {
+  color: #e2e8f0;
+}
+
+.dark .text-slate-700,
+.dark .text-slate-600,
+.dark .text-brand-800,
+.dark .text-blue-900,
+.dark .text-amber-800,
+.dark .text-emerald-800,
+.dark .text-red-800,
+.dark .hover\:text-brand-800:hover {
+  color: #cbd5e1;
+}
+
+.dark .text-slate-500,
+.dark .text-slate-400 {
+  color: #94a3b8;
+}
+
+.dark .text-brand-700,
+.dark .text-brand-600 {
+  color: #67e8f9;
+}
+
+.dark .text-blue-700,
+.dark .text-sky-700,
+.dark .text-indigo-700 {
+  color: #bfdbfe;
+}
+
+.dark .text-amber-700 {
+  color: #fcd34d;
+}
+
+.dark .text-emerald-700 {
+  color: #86efac;
+}
+
+.dark .text-red-700 {
+  color: #fca5a5;
+}
+
+.dark input,
+.dark select,
+.dark textarea {
+  background-color: #0f172a;
+  color: #e2e8f0;
+}
+
+.dark input::placeholder,
+.dark textarea::placeholder {
+  color: #64748b;
+}
+
+.dark .ring-slate-200,
+.dark .ring-sky-200,
+.dark .ring-indigo-200,
+.dark .ring-blue-200,
+.dark .ring-amber-200,
+.dark .ring-emerald-200,
+.dark .ring-red-200 {
+  --tw-ring-color: #334155;
+}
+
+.dark .shadow-sm,
+.dark .shadow-soft {
+  box-shadow: 0 18px 45px rgba(0, 0, 0, 0.28);
 }
